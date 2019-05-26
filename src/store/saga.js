@@ -8,7 +8,6 @@ function* mySaga() {
 }
 function* getList() {
   try {
-    console.log('hahah')
     const res = yield axios.get('/api/getheaderlist')
     const list = res.data.list
     yield put(initHeaderList(list))
