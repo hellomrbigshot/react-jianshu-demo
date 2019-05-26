@@ -44,7 +44,7 @@ export const SearchWrapper = styled.div`
   position: relative;
   height: 56px;
   margin-left: 20px;
-  .iconfont {
+  .zoom {
     position: absolute;
     right: 5px;
     top: 13px;

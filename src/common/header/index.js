@@ -30,7 +30,8 @@ class Header extends Component {
         >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch onClick={handleChangePage}>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={handleChangePage}>
+              <i className="iconfont icon-spinner"></i>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {
@@ -67,7 +68,7 @@ class Header extends Component {
               />
             </CSSTransition>
             <i
-              className={classnames('iconfont', 'icon-fangdajing', {
+              className={classnames('iconfont', 'icon-fangdajing', 'zoom', {
                 focused: focused
               })}
             />
