@@ -73,6 +73,7 @@ export const NavSearch = styled.input`
   padding: 0 35px 0 20px;
   font-size: 14px;
   color: #777;
+  outline: none;
   &.slide-enter {
     width: 240px;
     transition: all .4s ease-out;
@@ -115,6 +116,9 @@ export const SearchInfoTitle = styled.div`
 export const SearchInfoSwitch = styled.span`
   font-size: 13px;
   float: right
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const SearchInfoList = styled.div`
