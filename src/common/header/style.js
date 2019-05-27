@@ -104,6 +104,7 @@ export const SearchInfo = styled.div`
   padding: 20px 20px 10px;
   box-sizing: border-box;
   border-radius: 4px;
+  background: #fff;
 `
 
 export const SearchInfoTitle = styled.div`
@@ -118,6 +119,13 @@ export const SearchInfoSwitch = styled.span`
   float: right
   &:hover {
     cursor: pointer;
+  }
+  .spin {
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin-right: 2px;
+    transition: all .4s ease-in;
   }
 `
 
