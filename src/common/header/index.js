@@ -31,7 +31,8 @@ class Header extends Component {
           <SearchInfoTitle>
             热门搜索
             <SearchInfoSwitch onClick={() => handleChangePage(this.spin)}>
-              <i ref={(icon) => this.spin = icon} className="iconfont icon-spinner spin"></i>换一批</SearchInfoSwitch>
+              <i ref={(icon) => this.spin = icon} className="iconfont icon-spinner spin"></i>换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import recommendBg1 from '../../statics/recommend-bg-1.png'
 
 export const HomeWrapper =  styled.div`
   width: 960px;
@@ -93,4 +92,62 @@ export const RecommendItem = styled.div`
   margin-bottom: 6px;
   background: url(${(props) => props.imgUrl});
   background-size: contain;
+`
+export const WriterWrapper = styled.div`
+  width: 278px;
+  height: 300px;
+`
+export const WriterSearchTitle = styled.div`
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #969696;
+  margin-top: 10px;
+`
+export const WriterSearchSwitch = styled.div`
+  color: #969696;
+  font-size: 14px;
+  float: right;
+  &:hover {
+    cursor: pointer;
+  }
+  .spin {
+    font-size: 13px;
+    margin-right: 5px;
+    transition: all .4s ease-in;
+    transition-origin: center center;
+    display: block;
+    float: left;
+  }
+`
+export const WriterItem = styled.div`
+  margin-top: 15px;
+  overflow: hidden;
+  height: 48px;
+  .avatar {
+    float: left;
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+`
+export const WriterInfo = styled.div`
+  float: left;
+  margin-left: 5px;
+  height: 48px;
+  margin-bottom: 10px;
+  .name {
+    font-size: 14px;
+    color: #333;
+    padding-top: 5px;
+    line-height: 20px;
+  }
+  .info {
+    font-size: 12px;
+    color: #969696;
+    margin-top: 3px;
+    line-height: 20px;
+  }
 `

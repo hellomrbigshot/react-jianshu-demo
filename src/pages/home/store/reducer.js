@@ -3,6 +3,7 @@ import recommendBg1 from '../../../statics/recommend-bg-1.png'
 import recommendBg2 from '../../../statics/recommend-bg-2.png'
 import recommendBg3 from '../../../statics/recommend-bg-3.png'
 import recommendBg4 from '../../../statics/recommend-bg-4.png'
+import { INIT_WRITER_LIST } from './actionTypes'
 
 const defaultState = fromJS({
   topicList: [
@@ -60,11 +61,14 @@ const defaultState = fromJS({
       id: 4,
       imgUrl: recommendBg4
     }
-  ]
+  ],
+  writerList: []
 })
 
 export default (state = defaultState, action) => {
   switch(action.type) {
+    case INIT_WRITER_LIST:
+      return state.set('writerList', JSON.parse(JSON.stringify(action.data)))
     default:
       return state
   }

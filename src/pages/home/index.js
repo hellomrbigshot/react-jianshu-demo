@@ -18,6 +18,7 @@ class Home extends Component {
           </HomeLeft>
           <HomeRight>
             <Recommend />
+            <Writer />
           </HomeRight>
         </div>
       </HomeWrapper>

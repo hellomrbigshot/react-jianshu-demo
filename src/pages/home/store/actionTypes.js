@@ -1,0 +1,2 @@
+export const GET_WRITER_LIST = 'GET_WRITER_LIST'
+export const INIT_WRITER_LIST = 'INIT_WRITER_LIST'
