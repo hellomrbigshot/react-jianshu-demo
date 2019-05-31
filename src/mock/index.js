@@ -1,70 +1,50 @@
+import { headerList, writerList, homeInfo } from './db.js'
 const Mock = require('mockjs')
 
-Mock.mock('/api/getheaderlist', {
-  'list|2-4': [
-    'AMD',
-    'CMD',
-    'UMD',
-    'AA'
-  ]
+Mock.mock('/api/getheaderlist', () => {
+  return {
+    code: 'OK',
+    data: {
+      list: getRandomArray(headerList, 10)
+    }
+  }
 })
-Mock.mock('/api/getwriterlist', {
-  'list|1-3': [
-    {
-      name: '张三',
-      like: '100',
-      wordCount: '10k',
-      id: 1,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/8952775/4ca21a2c-28bc-4140-9c80-bffe8c93d5b0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240'
-    },
-    {
-      name: '李四',
-      like: '21',
-      wordCount: '8088',
-      id: 2,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/11985089/da0818ec-167e-4579-9c44-1a082a5a8664.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96'
-    },
-    {
-      name: '王五',
-      like: '1008',
-      wordCount: '25k',
-      id: 3,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/8952775/4ca21a2c-28bc-4140-9c80-bffe8c93d5b0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240'
-    },
-    {
-      name: '赵六',
-      like: '8',
-      wordCount: '6789',
-      id: 4,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/8952775/4ca21a2c-28bc-4140-9c80-bffe8c93d5b0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240'
-    },
-    {
-      name: '小七',
-      like: '590',
-      wordCount: '30.5k',
-      id: 5,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/8952775/4ca21a2c-28bc-4140-9c80-bffe8c93d5b0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240'
-    },
-    {
-      name: '小雨',
-      like: '18',
-      wordCount: '13.4k',
-      id: 6,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/11985089/da0818ec-167e-4579-9c44-1a082a5a8664.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96'
-    },
-    {
-      name: '糖糖',
-      like: '98',
-      wordCount: '7.7k',
-      id: 7,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/8952775/4ca21a2c-28bc-4140-9c80-bffe8c93d5b0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240'
-    },
-    {
-      name: '小宝',
-      like: '150',
-      wordCount: '9.7k',
-      id: 8,
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/11985089/da0818ec-167e-4579-9c44-1a082a5a8664.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96'
-    },
-  ]
+Mock.mock('/api/getwriterlist', () => {
+  return {
+    code: 'OK',
+    data: {
+      list: getRandomArray(writerList)
+    }
+  }
 })
+Mock.mock('/api/gethomeinfo', () => {
+  return {
+    code: 'OK',
+    data: homeInfo
+  }
+})
+Mock.mock('/api/gethomelist', () => {
+  return {
+    code: 'OK',
+    data: getRandomArray(homeInfo.articleList)
+  }
+})
+
+/** 
+ * @params {Array} arr 数组
+ * @params {number} number 获取的数量
+ * @return {Array} 返回数组
+ */
+function getRandomArray(arr = [], number = 5) {
+  // 算法参考 https://segmentfault.com/q/1010000006819233
+  arr = JSON.parse(JSON.stringify(arr))
+  let result = []
+  let count = arr.length
+  for (let i = 0; i < number; i++) {
+    let index = ~~(Math.random() * count) + i
+    result[i] = arr[index]
+    arr[index] = arr[i]
+    count--
+  }
+  return result
+}

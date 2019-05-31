@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
@@ -19,7 +19,7 @@ import {
   SearchInfoList
 } from './style'
 
-class Header extends Component {
+class Header extends PureComponent {
   getListArea() {
     const { focused, headerList, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props
     if (focused || mouseIn) {

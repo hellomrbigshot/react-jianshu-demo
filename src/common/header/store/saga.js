@@ -9,7 +9,7 @@ export function* getHeaderLit() {
 export function* getList() {
   try {
     const res = yield axios.get('/api/getheaderlist')
-    const list = res.data.list
+    const list = res.data.data.list
     yield put(initHeaderList(list))
   } catch(e) {
     console.log('网络请求失败')

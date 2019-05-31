@@ -135,7 +135,7 @@ export const WriterItem = styled.div`
 `
 export const WriterInfo = styled.div`
   float: left;
-  margin-left: 5px;
+  margin-left: 10px;
   height: 48px;
   margin-bottom: 10px;
   .name {
@@ -150,4 +150,26 @@ export const WriterInfo = styled.div`
     margin-top: 3px;
     line-height: 20px;
   }
+`
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  margin: 30px 0;
+`
+
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
 `
