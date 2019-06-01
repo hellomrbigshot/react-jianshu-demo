@@ -140,3 +140,8 @@ export const writerList = [
     imgUrl: 'https://upload.jianshu.io/users/upload_avatars/11985089/da0818ec-167e-4579-9c44-1a082a5a8664.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96'
   },
 ]
+
+export const detailInfo = {
+  title: 'provide / inject 在业务中的一次实践',
+  content: "```provide``` 和 ```inject``` 是 ```Vue.js``` 2.2.0版本之后新增的 API。基本用法是在父组件中用 ```provide``` 提供一个对象或者返回对象的函数，然后在它的所有子孙组件中都可以用 ```inject``` 获取到这个对象的属性。 </br> 现在我有一个业务需求，组件 Detail 是通用流程详情页界面（简称D），D 中包含了一个提交留言的组件 Chat（简称C）。但是对于一些特殊流程，会在 D 组件下加载特殊的详情组件 Special Detail（以下简称S），并且组件 C 也放在了组件 S 中。所以这个界面有两种情况，普通流程是父组件 D，子组件 C；特殊流程是父组件 D，子组件 S，孙组件 C。有一个新增需求，需要从 D 组件传一个异步获取的数据到 C 组件中，以前我们可能需要用 ```props``` 去传递数据，普通流程 D -> C，特殊流程 D -> S -> C；或者把数据通过 ```vuex``` 在组件之间传递。但是现在 ```provide``` 和 ```inject``` 提供了一种新的处理方法，直接在父组件中 ```provide… provide() { return { user: this.user } }, data() { return { user: { id: 'a' } } } }```  父组件 ```provide``` 中的 ```user``` 是引用类型，指向父组件 ```data``` 中 ```user``` 的内存，所以子节点中```inject``` 的 ```user``` 也指向这块内存。当父组件通过异步函数给 ```data``` 中 ```user``` 的 ```id``` 赋值时，这块内存中的数据变了，子组件的 ```user``` 指向这块内存，所以子组件中的 ```user``` 也变了。这样就解决了 ```provide``` 和 ```inject``` 数据不响应的问题。 "
+}

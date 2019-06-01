@@ -1,12 +1,16 @@
 import styled from 'styled-components'
 import logoPic from '../../statics/logo.png'
 export const HeaderWrapper = styled.div`
-  position: relativ;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
   height: 56px;
-  bacground: #ddd;
+  background: #fff;
   border-bottom: 1px solid #f0f0f0;
 `
-export const Logo = styled.a`
+export const Logo = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -177,6 +181,10 @@ export const Button = styled.div`
     width: 100px;
     color: #fff;
     background: #ea6f5a;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
     &: hover {
       background: #ec6149;
     }

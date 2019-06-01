@@ -158,8 +158,13 @@ export const LoadMore = styled.div`
   background: #a5a5a5;
   text-align: center;
   border-radius: 20px;
-  color: #fff;
+  color: #333;
   margin: 30px 0;
+  &:hover {
+    cursor: pointer;
+    background: #9b9b9b;
+    color: #fff;
+  }
 `
 
 export const BackTop = styled.div`
@@ -172,4 +177,7 @@ export const BackTop = styled.div`
   text-align: center;
   font-size: 14px;
   border: 1px solid #ccc;
+  &:hover {
+    cursor: pointer;
+  }
 `
